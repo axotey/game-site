@@ -14,9 +14,6 @@ function openGame(gameName) {
         case 'flappybird':
             startFlappyBird();
             break;
-        case 'pong':
-            startPong();
-            break;
         case 'tictactoe':
             startTicTacToe();
             break;
@@ -26,50 +23,17 @@ function openGame(gameName) {
         case '2048':
             start2048();
             break;
-        case 'bitlife':
-            startBitLife();
-            break;
         case 'minesweeper':
             startMinesweeper();
-            break;
-        case 'connect4':
-            startConnect4();
-            break;
-        case 'breakout':
-            startBreakout();
-            break;
-        case 'wordguess':
-            startWordGuess();
-            break;
-        case 'dino':
-            startDino();
             break;
         case 'numberguess':
             startNumberGuess();
             break;
-        case 'spaceshooter':
-            startSpaceShooter();
-            break;
-        case 'sudoku':
-            startSudoku();
-            break;
-        case 'simon':
-            startSimon();
-            break;
-        case 'whackamole':
-            startWhackAMole();
-            break;
-        case 'trivia':
-            startTrivia();
-            break;
-        case 'typing':
-            startTyping();
+        case 'wordguess':
+            startWordGuess();
             break;
         case 'rockpaperscissors':
             startRockPaperScissors();
-            break;
-        case 'pacman':
-            startPacMan();
             break;
     }
     
@@ -78,9 +42,6 @@ function openGame(gameName) {
 
 function closeGame() {
     document.getElementById('gameModal').classList.remove('active');
-    if (window[`stop${currentGame}`]) {
-        window[`stop${currentGame}`]();
-    }
 }
 
 window.onclick = function(event) {
