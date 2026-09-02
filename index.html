@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 Game Hub - Play Awesome Games!</title>
+    <title>🎮 Axogames - Ultimate Game Hub</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -30,14 +30,20 @@
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.95;
         }
 
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -50,27 +56,31 @@
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
+            border: 2px solid transparent;
         }
 
         .game-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border-color: #667eea;
         }
 
         .game-icon {
-            font-size: 4em;
+            font-size: 3.5em;
             margin-bottom: 15px;
         }
 
         .game-card h2 {
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.3em;
         }
 
         .game-card p {
             color: #666;
-            font-size: 0.9em;
+            font-size: 0.85em;
             margin-bottom: 15px;
+            line-height: 1.4;
         }
 
         .play-btn {
@@ -82,6 +92,7 @@
             cursor: pointer;
             font-weight: bold;
             transition: transform 0.2s;
+            font-size: 0.95em;
         }
 
         .play-btn:hover {
@@ -109,7 +120,7 @@
             background: white;
             border-radius: 20px;
             padding: 30px;
-            max-width: 800px;
+            max-width: 900px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
@@ -124,6 +135,8 @@
             font-weight: bold;
             cursor: pointer;
             color: #666;
+            background: none;
+            border: none;
         }
 
         .close-btn:hover {
@@ -135,6 +148,7 @@
             display: block;
             margin: 20px auto;
             background: #f0f0f0;
+            border-radius: 10px;
         }
 
         .game-info {
@@ -150,21 +164,40 @@
             color: #667eea;
             margin: 10px 0;
         }
+
+        .controls {
+            text-align: center;
+            margin: 15px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            margin-top: 8px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🎮 Game Hub</h1>
-            <p>Your Ultimate Gaming Destination</p>
+            <h1>🎮 AXOGAMES</h1>
+            <p class="tagline">Your Ultimate Gaming Destination - 20+ Awesome Games!</p>
         </header>
 
         <div class="game-grid">
+            <!-- Classic Games -->
             <div class="game-card" onclick="openGame('snake')">
                 <div class="game-icon">🐍</div>
                 <h2>Snake Game</h2>
                 <p>Classic snake game. Eat food and grow longer!</p>
                 <button class="play-btn">Play Now</button>
+                <span class="badge">Classic</span>
             </div>
 
             <div class="game-card" onclick="openGame('flappybird')">
@@ -172,6 +205,7 @@
                 <h2>Flappy Bird</h2>
                 <p>Navigate through the pipes. Don't hit them!</p>
                 <button class="play-btn">Play Now</button>
+                <span class="badge">Classic</span>
             </div>
 
             <div class="game-card" onclick="openGame('pong')">
@@ -179,6 +213,7 @@
                 <h2>Pong</h2>
                 <p>Classic paddle game. Bounce the ball!</p>
                 <button class="play-btn">Play Now</button>
+                <span class="badge">Classic</span>
             </div>
 
             <div class="game-card" onclick="openGame('tictactoe')">
@@ -186,6 +221,7 @@
                 <h2>Tic Tac Toe</h2>
                 <p>Beat the computer in this classic game</p>
                 <button class="play-btn">Play Now</button>
+                <span class="badge">Classic</span>
             </div>
 
             <div class="game-card" onclick="openGame('memory')">
@@ -193,6 +229,7 @@
                 <h2>Memory Game</h2>
                 <p>Match pairs and test your memory!</p>
                 <button class="play-btn">Play Now</button>
+                <span class="badge">Classic</span>
             </div>
 
             <div class="game-card" onclick="openGame('2048')">
@@ -200,13 +237,135 @@
                 <h2>2048</h2>
                 <p>Combine tiles to reach 2048!</p>
                 <button class="play-btn">Play Now</button>
+                <span class="badge">Puzzle</span>
+            </div>
+
+            <!-- New Games -->
+            <div class="game-card" onclick="openGame('bitlife')">
+                <div class="game-icon">👤</div>
+                <h2>BitLife</h2>
+                <p>Live a virtual life! Make choices and see what happens!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Simulation</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('minesweeper')">
+                <div class="game-icon">💣</div>
+                <h2>Minesweeper</h2>
+                <p>Classic puzzle. Find all the mines without clicking them!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Puzzle</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('connect4')">
+                <div class="game-icon">🔴</div>
+                <h2>Connect 4</h2>
+                <p>Get 4 in a row before your opponent!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Strategy</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('breakout')">
+                <div class="game-icon">🧱</div>
+                <h2>Breakout</h2>
+                <p>Break all the bricks! Use the paddle to keep the ball bouncing!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Action</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('wordguess')">
+                <div class="game-icon">📝</div>
+                <h2>Word Guess</h2>
+                <p>Guess the word before you run out of chances!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Word</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('dino')">
+                <div class="game-icon">🦕</div>
+                <h2>Dino Runner</h2>
+                <p>Help the dinosaur jump over obstacles!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Action</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('numberguess')">
+                <div class="game-icon">🎲</div>
+                <h2>Number Guess</h2>
+                <p>Guess the number between 1-100!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Puzzle</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('spaceshooter')">
+                <div class="game-icon">🚀</div>
+                <h2>Space Shooter</h2>
+                <p>Shoot down the alien enemies!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Shooter</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('sudoku')">
+                <div class="game-icon">🔲</div>
+                <h2>Sudoku</h2>
+                <p>Fill the grid with numbers 1-9!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Puzzle</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('simon')">
+                <div class="game-icon">🌈</div>
+                <h2>Simon Says</h2>
+                <p>Repeat the color sequence and see how long you can last!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Memory</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('whackamole')">
+                <div class="game-icon">🔨</div>
+                <h2>Whack-a-Mole</h2>
+                <p>Click the moles as fast as you can!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Action</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('trivia')">
+                <div class="game-icon">❓</div>
+                <h2>Trivia Quiz</h2>
+                <p>Test your knowledge with fun trivia questions!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Quiz</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('typing')">
+                <div class="game-icon">⌨️</div>
+                <h2>Typing Speed</h2>
+                <p>Test your typing speed and accuracy!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Skill</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('rockpaperscissors')">
+                <div class="game-icon">✊</div>
+                <h2>Rock Paper Scissors</h2>
+                <p>Battle the computer in this classic game!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Strategy</span>
+            </div>
+
+            <div class="game-card" onclick="openGame('pacman')">
+                <div class="game-icon">👾</div>
+                <h2>Pac-Man</h2>
+                <p>Eat all the dots and avoid the ghosts!</p>
+                <button class="play-btn">Play Now</button>
+                <span class="badge">Classic</span>
             </div>
         </div>
     </div>
 
     <div id="gameModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeGame()">&times;</span>
+            <button class="close-btn" onclick="closeGame()">✕</button>
             <div id="gameContainer"></div>
         </div>
     </div>
@@ -217,6 +376,21 @@
     <script src="games/tictactoe.js"></script>
     <script src="games/memory.js"></script>
     <script src="games/2048.js"></script>
+    <script src="games/bitlife.js"></script>
+    <script src="games/minesweeper.js"></script>
+    <script src="games/connect4.js"></script>
+    <script src="games/breakout.js"></script>
+    <script src="games/wordguess.js"></script>
+    <script src="games/dino.js"></script>
+    <script src="games/numberguess.js"></script>
+    <script src="games/spaceshooter.js"></script>
+    <script src="games/sudoku.js"></script>
+    <script src="games/simon.js"></script>
+    <script src="games/whackamole.js"></script>
+    <script src="games/trivia.js"></script>
+    <script src="games/typing.js"></script>
+    <script src="games/rockpaperscissors.js"></script>
+    <script src="games/pacman.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
